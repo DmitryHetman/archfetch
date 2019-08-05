@@ -9,12 +9,12 @@
 int main(void){
 static FILE *file;
 //static int prof1,prof2;
-static char gcc[23],
+static char gcc[20],
 resolution[10],
 clib[33],
 clibv[48],
 alsa[36],
-motherboard[7],
+motherboard[25],
 //prof[64],
 //release[13],
 cpul[60],
@@ -43,7 +43,7 @@ uname(&kernel);
 
 /* gcc */
  file=popen("gcc --version","r");
- fgets(gcc,23,file);
+ fgets(gcc,19,file);
  pclose(file);
 
 /* root */
@@ -52,7 +52,7 @@ uname(&kernel);
 
 /* motherboard */
   file=fopen("/sys/devices/virtual/dmi/id/product_name","r");
-  fgets(motherboard,7,file);
+  fgets(motherboard,25,file);
   fclose(file);
 
 /* clib */
@@ -111,8 +111,8 @@ uname(&kernel);
 
 printf("[1;36m                  -`                     %s[1;37m@[1;36m%s\n\
 [1;36m                 .o+`                    OS:[m Arch Linux%s\n\
-[1;36m                `ooo/                    MotherBoard:[m %s %s\n\
-[1;36m               `+oooo:                   Kernel:[m %s %s\n\
+[1;36m                `ooo/                    MotherBoard:[m %s %s\
+[1;36m              `+oooo:                   Kernel:[m %s %s\n\
 [1;36m              `+oooooo:                  Clib:[m %s\n\
 [1;36m              -+oooooo+:                 GCC:[m %s\
 [1;36m            `/:-:++oooo+:                Graphic Environment:[m %s\n\
